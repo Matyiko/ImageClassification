@@ -1,0 +1,9 @@
+version: '3'
+services:
+  cifar10:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/app/data
+
