@@ -10,3 +10,5 @@
 **Related works:** https://github.com/kuangliu/pytorch-cifar/tree/master
 
 **How to run it:** ```docker compose up -d```
+
+**Note:** In the next milestone we are planning to extend our dataset from Google Open Images.
