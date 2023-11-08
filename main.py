@@ -46,3 +46,18 @@ classes = ('plane', 'car', 'bird', 'cat', 'deer',
            'dog', 'frog', 'horse', 'ship', 'truck')
 
 print(trainset)
+
+import fiftyone as fo
+import fiftyone.zoo as foz
+
+dataset = foz.load_zoo_dataset(
+              "open-images-v7",
+              split="validation",
+              label_types=["classifications"],
+              classes=["Cat", "Dog"],
+              max_samples=100,
+          )
+
+print(dataset)
+
+print(fo.get_classes())
