@@ -3,6 +3,8 @@
 
 **Team members:** Szakszon Mátyás - DXR 372, ~~Pete Dávid - GVJ529, Hajszter Donát - QOZ2I7~~
 
+Pete Dávid és Hajszer Donát neve, azért van áthúzva, mert november 16-án úgy döntöttek, hogy abbahagyják ezt az Msc képzést, úgyhogy egyedül Szakszon Mátyás készíti a feladatot.
+
 **Project description:** Image classification using pretrained convolutional networks.
 
 **Functions of the files in the repository:** ---
@@ -12,4 +14,3 @@
 **How to run it:** ```docker compose up -d```
 
 **Note:** ~~In the next milestone we are planning to extend our dataset from Google Open Images.~~
-Pete Dávid és Hajszer Donát neve, azért van áthúzva, mert november 16-án úgy döntöttek, hogy abbahagyják ezt az Msc képzést, úgyhogy egyedül Szakszon Mátyás készíti a feladatot.
