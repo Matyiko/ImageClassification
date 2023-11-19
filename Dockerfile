@@ -8,6 +8,7 @@ WORKDIR /app
 COPY requirements.txt /app/
 
 # Install the required Python packages
+RUN pip install -U pip
 RUN pip install -r requirements.txt
 
 VOLUME /data
@@ -15,4 +16,4 @@ VOLUME /data
 COPY . /app
 
 # Set the entry point to main.py
-ENTRYPOINT ["python", "main.py"]
+ENTRYPOINT ["ipython"]
