@@ -12,8 +12,10 @@ The goal of this project is to compare and demonstrate the advantages of using p
 ## Functions of the files in the repository:
 - **build/Dockerfile** : Describes the process of the containerization of the solution.
 - **build/requirements.txt** : Contains the installed requirements of the project with fixed version numbers.
-- **build/resnet.ipynb** : Contains the implementation and evaluation of a `pretrained` and a `not pretrained` resnet model. It also contains a small Gradio implementation that shows the difference between the two model. We can upload any Image we want to test the two different models.
+- **build/resnet.ipynb** : Contains the implementation and evaluation of a `pretrained` and a `not pretrained` resnet model. It also contains a small `Gradio` implementation that shows the difference between the two model. We can upload any `Image` we would like to test the two different models with.
 
-## Related works: https://github.com/kuangliu/pytorch-cifar/tree/master
+## Related works: 
+- [CIFAR]https://github.com/kuangliu/pytorch-cifar/tree/master
+- [Resnet]https://pytorch.org/hub/pytorch_vision_resnet/
 
-## How to run it: ```docker compose up -d```
+**How to run it:** ```docker compose up -d```
