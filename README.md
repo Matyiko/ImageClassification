@@ -12,7 +12,7 @@ The goal of this project is to compare and demonstrate the advantages of using p
 ## Functions of the files in the repository:
 - **build/Dockerfile** : Describes the process of the containerization of the solution.
 - **build/requirements.txt** : Contains the installed requirements of the project with fixed version numbers.
-- **build/resnet.ipynb** : Contains the implementation and evaluation of a `pretrained` and a `not pretrained` resnet model. It also contains a small `Gradio` implementation that shows the difference between the two model. We can upload any `Image` we would like to test the two different models with.
+- **build/resnet.ipynb** : Contains the implementation and evaluation of a `PreTrained` and a `Mot PreTrained` resnet model. It also contains a small `Gradio` implementation that shows the difference between the two model. We can upload any `Image` we would like to test the two different models with.
 
 ## Related works: 
 - [CIFAR Dataset](https://www.cs.toronto.edu/~kriz/cifar.html)
@@ -23,5 +23,24 @@ The goal of this project is to compare and demonstrate the advantages of using p
 
 I implemented an interactive UI with Gradio that allow us to upload any `Image` we would like and we can test the models with it. There are two `input` and `output` sections first one for the pretrained and the second one is for the not pretrained. 
 If we upload any image in the input fields and submit it will auto select that image for the other input as well just to make it a little easier to test the two models with the same input. The ideal solution would be to use only one input field and two output field but it did not seem possible with Gradio but it is still pretty good to test the models.
+
+After we uploaded and sumbitted the image we are able to see the results in the output field. It shows the model's probabilities for the 10 different classes (sum 100%).
+
+# Methods of training
+
+The dataset contained 224x224 images, and they were normalized into..... TODO
+I used a train-validation split with 90-10 ratio.
+The dataeset contains 10 different classes that we can classify using our models.
+We split the cases instead of the images, to avoid data leakage between the splits,
+as neighbouring images are very similar to each other.
+
+# Results
+
+## Metrics on test set
+
+| Model                | Epochs | Test Loss  | Test Accuracy |
+|----------------------|--------|------------|---------------|
+| PreTrained           | 10     | 0.2228     | 0.9369        |
+| Not PreTrained       | 10     | 0.2316     | 0.9405        | 
  
 **How to run it:** ```docker compose up -d```
