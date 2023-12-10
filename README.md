@@ -15,7 +15,7 @@ The goal of this project is to compare and demonstrate the advantages of using p
 - **build/resnet.ipynb** : Contains the implementation and evaluation of a `pretrained` and a `not pretrained` resnet model. It also contains a small `Gradio` implementation that shows the difference between the two model. We can upload any `Image` we would like to test the two different models with.
 
 ## Related works: 
-- [CIFAR]https://github.com/kuangliu/pytorch-cifar/tree/master
-- [Resnet]https://pytorch.org/hub/pytorch_vision_resnet/
-
+- [CIFAR Dataset](https://www.cs.toronto.edu/~kriz/cifar.html)
+- [Resnet](https://pytorch.org/hub/pytorch_vision_resnet/)
+- [Gradio](https://www.gradio.app/docs/interface)
 **How to run it:** ```docker compose up -d```
