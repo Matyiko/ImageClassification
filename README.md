@@ -15,7 +15,7 @@ The goal of this project is to compare and demonstrate the advantages of using p
 - **build/resnet.ipynb** : Contains the implementation and evaluation of a `PreTrained` and a `Mot PreTrained` resnet model. It also contains a small `Gradio` implementation that shows the difference between the two model. We can upload any `Image` we would like to test the two different models with.
 
 ## Related works: 
-- [CIFAR Dataset](https://www.cs.toronto.edu/~kriz/cifar.html)
+- [CIFAR10 Dataset](https://www.cs.toronto.edu/~kriz/cifar.html)
 - [Resnet](https://pytorch.org/hub/pytorch_vision_resnet/)
 - [Gradio](https://www.gradio.app/docs/interface)
 
@@ -42,5 +42,11 @@ as neighbouring images are very similar to each other.
 |----------------------|--------|------------|---------------|
 | PreTrained           | 10     | 0.2228     | 0.9369        |
 | Not PreTrained       | 10     | 0.2316     | 0.9405        | 
+
+It's pretty surprising but the `Not PreTrained` model is basicly as good as the `PreTrained` version of it.
+On basic pictures from the internet both of the models give the same results and they are very accurate however i tested the models with selfmade pictures and there i could find very different guesses from the models which is pretty intresting.
+This is my favourite test:
+![image](https://github.com/Matyiko/ImageClassification/assets/73035410/1bf3a483-ebf0-4fa4-8fa2-be39b75804b0)
+
  
 **How to run it:** ```docker compose up -d```
