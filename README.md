@@ -12,19 +12,22 @@ The goal of this project is to compare and demonstrate the advantages of using p
 ## Functions of the files in the repository:
 - **build/Dockerfile** : Describes the process of the containerization of the solution.
 - **build/requirements.txt** : Contains the installed requirements of the project with fixed version numbers.
-- **build/resnet.ipynb** : Contains the implementation and evaluation of a `PreTrained` and a `Mot PreTrained` resnet model. It also contains a small `Gradio` implementation that shows the difference between the two model. We can upload any `Image` we would like to test the two different models with.
+- **build/resnet.ipynb** : Contains the implementation and evaluation of a `PreTrained` and a `Not PreTrained` resnet model. It also contains a small `Gradio` implementation that shows the difference between the two model. We can upload any `Image` we would like to test the two different models with.
 
-## Related works: 
-- [Resnet](https://pytorch.org/hub/pytorch_vision_resnet/)
-- [Gradio](https://www.gradio.app/docs/interface)
+## Introduction
+
+For the task i choosed the [Resnet-18](https://pytorch.org/hub/pytorch_vision_resnet/) model because my task is to test the difference between a pretraiend and not pretrained model. The Resnet-18 model is perfect for that porpuse because you can load a pretrained version of the network trained on more than a million images from the ImageNet database or just use the not pretrained version and train it myself.
+
+The ResNet-18 is a convolutional neural network that is 18 layers deep. It has around 11 million trainable parameters. It consists of CONV layers with filters of size 3x3
 
 ## Dataset
 I choose the [CIFAR10 Dataset](https://www.cs.toronto.edu/~kriz/cifar.html) which contains around 50000 labeled images for 10 different classes.
+
 The classes: `plane, car, bird, cat, deer, dog, frog, horse, ship, truck`
 
 ### Interactive UI usage
 
-I implemented an interactive UI with Gradio that allow us to upload any `Image` we would like and we can test the models with it. There are two `input` and `output` sections first one for the pretrained and the second one is for the not pretrained. 
+I implemented an interactive UI with [Gradio](https://www.gradio.app/docs/interface) that allow us to upload any `Image` we would like and we can test the models with it. There are two `input` and `output` sections first one for the pretrained and the second one is for the not pretrained. 
 If we upload any image in the input fields and submit it will auto select that image for the other input as well just to make it a little easier to test the two models with the same input. The ideal solution would be to use only one input field and two output field but it did not seem possible with Gradio but it is still pretty good to test the models.
 
 After we uploaded and sumbitted the image we are able to see the results in the output field. It shows the model's probabilities for the 10 different classes (sum 100%).
@@ -33,11 +36,10 @@ After we uploaded and sumbitted the image we are able to see the results in the 
 
 # Methods of training
 
-The dataset contained 224x224 images, and they were normalized into..... TODO
-I used a train-validation split with 90-10 ratio.
+The dataset was resized to 224x224, and the images were normalized. Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])the mean and standard deviation values used here. The values [0.485, 0.456, 0.406] represent the mean values for the red, green, and blue channels, respectively. The values [0.229, 0.224, 0.225] represent the standard deviation for the red, green, and blue channels.
+
+I used a train-validation split with 90-10 ratio. The test set is completely separate and is not involved in the training/validation split. It is created using the CIFAR-10 test dataset, which is distinct from the training dataset.
 The dataeset contains 10 different classes that we can classify using our models.
-We split the cases instead of the images, to avoid data leakage between the splits,
-as neighbouring images are very similar to each other.
 
 I trained on my own PC with a RTX 3070 GPU.
 The training takes about 5-15 minits for each model so the whole training is about 20 minits.
@@ -53,9 +55,12 @@ The training takes about 5-15 minits for each model so the whole training is abo
 
 It's pretty surprising but the `Not PreTrained` model is basicly as good as the `PreTrained` version of it.
 On basic pictures from the internet both of the models give the same results and they are very accurate however i tested the models with selfmade pictures and there i could find very different guesses from the models which is pretty intresting.
-This is my favourite test:
+
+As we can see in the picture above that the PreTrained model is way more self-confident because it usually guesses the first class with a higher value than the Not Pretrained. Which is instresting because it's not clear if it's a good or bad property of the model.
+
+My favourite test:
 ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/1bf3a483-ebf0-4fa4-8fa2-be39b75804b0)
-As we can see it's the `Not PreTrained` model that guessed here correctly.
+As we can see it's the `Not PreTrained` model that guessed this one correctly.
 
  
 **How to run it:** ```docker compose up -d```
