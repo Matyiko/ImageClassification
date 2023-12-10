@@ -16,4 +16,4 @@ VOLUME /data
 COPY . /app
 
 # Set the entry point to main.py
-ENTRYPOINT ["ipython"]
+ENTRYPOINT ["ipython","resnet.ipynb"]
