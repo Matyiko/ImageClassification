@@ -14,6 +14,9 @@ The goal of this project is to compare and demonstrate the advantages of using p
 - **build/requirements.txt** : Contains the installed requirements of the project with fixed version numbers.
 - **build/resnet.ipynb** : Contains the implementation and evaluation of a `PreTrained` and a `Not PreTrained` resnet model. It also contains a small `Gradio` implementation that shows the difference between the two model. We can upload any `Image` we would like to test the two different models with.
 
+ 
+**How to run it:** ```docker compose up -d```
+
 ## Introduction
 
 For the task i choosed the [Resnet-18](https://pytorch.org/hub/pytorch_vision_resnet/) model because my task is to test the difference between a pretraiend and not pretrained model. The Resnet-18 model is perfect for that porpuse because you can load a pretrained version of the network trained on more than a million images from the ImageNet database or just use the not pretrained version and train it myself.
@@ -41,12 +44,19 @@ The dataset was resized to 224x224, and the images were normalized. Normalize(me
 I used a train-validation split with 90-10 ratio. The test set is completely separate and is not involved in the training/validation split. It is created using the CIFAR-10 test dataset, which is distinct from the training dataset.
 The dataeset contains 10 different classes that we can classify using our models.
 
+There is a visual representation of the Training of the two models.
+The Purple is the PreTrained and the yellow is the Not PreTrained.
+![image](https://github.com/Matyiko/ImageClassification/assets/73035410/2e2ffc76-9fb2-4e9f-a282-ed909486de19)
+![image](https://github.com/Matyiko/ImageClassification/assets/73035410/1796acd8-80f5-4561-b0f6-efd123e9f5b8)
+![image](https://github.com/Matyiko/ImageClassification/assets/73035410/71cf492f-57fc-4bbc-9470-b7fb43b6bd98)
+![image](https://github.com/Matyiko/ImageClassification/assets/73035410/2f9e55b2-47fc-44f2-bf7f-5cddead194dd)
+
+
+
 I trained on my own PC with a RTX 3070 GPU.
 The training takes about 5-15 minits for each model so the whole training is about 20 minits.
 
-# Results
-
-## Metrics on test set
+## Results
 
 | Model                | Epochs | Test Loss  | Test Accuracy |
 |----------------------|--------|------------|---------------|
@@ -62,5 +72,10 @@ My favourite test:
 ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/1bf3a483-ebf0-4fa4-8fa2-be39b75804b0)
 As we can see it's the `Not PreTrained` model that guessed this one correctly.
 
- 
-**How to run it:** ```docker compose up -d```
+## Conlusions
+
+The final conlusions is that in numbers there is almost no difference between the two models but they give very different percentages compare to that.
+
+I most enjoyed the project is visualizing the results with Gradio it was pretty intresting.  However i would have preffered to do it with an actual team so we can try out more intresting and cool stuff together.
+
+
