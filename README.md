@@ -15,9 +15,12 @@ The goal of this project is to compare and demonstrate the advantages of using p
 - **build/resnet.ipynb** : Contains the implementation and evaluation of a `PreTrained` and a `Mot PreTrained` resnet model. It also contains a small `Gradio` implementation that shows the difference between the two model. We can upload any `Image` we would like to test the two different models with.
 
 ## Related works: 
-- [CIFAR10 Dataset](https://www.cs.toronto.edu/~kriz/cifar.html)
 - [Resnet](https://pytorch.org/hub/pytorch_vision_resnet/)
 - [Gradio](https://www.gradio.app/docs/interface)
+
+## Dataset
+I choose the [CIFAR10 Dataset](https://www.cs.toronto.edu/~kriz/cifar.html) which contains around 50000 labeled images for 10 different classes.
+The classes: `plane, car, bird, cat, deer, dog, frog, horse, ship, truck`
 
 ### Interactive UI usage
 
@@ -35,6 +38,9 @@ I used a train-validation split with 90-10 ratio.
 The dataeset contains 10 different classes that we can classify using our models.
 We split the cases instead of the images, to avoid data leakage between the splits,
 as neighbouring images are very similar to each other.
+
+I trained on my own PC with a RTX 3070 GPU.
+The training takes about 5-15 minits for each model so the whole training is about 20 minits.
 
 # Results
 
