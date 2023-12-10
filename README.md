@@ -36,6 +36,7 @@ I implemented an interactive UI with [Gradio](https://www.gradio.app/docs/interf
 If we upload any image in the input fields and submit it will auto select that image for the other input as well just to make it a little easier to test the two models with the same input. The ideal solution would be to use only one input field and two output field but it did not seem possible with Gradio but it is still pretty good to test the models.
 
 After we uploaded and sumbitted the image we are able to see the results in the output field. It shows the model's probabilities for the 10 different classes (sum 100%).
+
 ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/ecfcc41e-78e4-47a4-87d2-317d063cda4c)
 
 
@@ -48,6 +49,7 @@ The dataeset contains 10 different classes that we can classify using our models
 
 There is a visual representation of the Training of the two models.
 The Purple is the PreTrained and the yellow is the Not PreTrained.
+
 ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/2e2ffc76-9fb2-4e9f-a282-ed909486de19)
 ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/1796acd8-80f5-4561-b0f6-efd123e9f5b8)
 ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/71cf492f-57fc-4bbc-9470-b7fb43b6bd98)
@@ -71,7 +73,9 @@ On basic pictures from the internet both of the models give the same results and
 As we can see in the picture above that the PreTrained model is way more self-confident because it usually guesses the first class with a higher value than the Not Pretrained. Which is instresting because it's not clear if it's a good or bad property of the model.
 
 My favourite test:
+
 ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/1bf3a483-ebf0-4fa4-8fa2-be39b75804b0)
+
 As we can see it's the `Not PreTrained` model that guessed this one correctly.
 
 ## Conlusions
