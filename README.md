@@ -25,6 +25,8 @@ I implemented an interactive UI with Gradio that allow us to upload any `Image` 
 If we upload any image in the input fields and submit it will auto select that image for the other input as well just to make it a little easier to test the two models with the same input. The ideal solution would be to use only one input field and two output field but it did not seem possible with Gradio but it is still pretty good to test the models.
 
 After we uploaded and sumbitted the image we are able to see the results in the output field. It shows the model's probabilities for the 10 different classes (sum 100%).
+![image](https://github.com/Matyiko/ImageClassification/assets/73035410/ecfcc41e-78e4-47a4-87d2-317d063cda4c)
+
 
 # Methods of training
 
@@ -47,6 +49,7 @@ It's pretty surprising but the `Not PreTrained` model is basicly as good as the 
 On basic pictures from the internet both of the models give the same results and they are very accurate however i tested the models with selfmade pictures and there i could find very different guesses from the models which is pretty intresting.
 This is my favourite test:
 ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/1bf3a483-ebf0-4fa4-8fa2-be39b75804b0)
+As we can see it's the `Not PreTrained` model that guessed here correctly.
 
  
 **How to run it:** ```docker compose up -d```
