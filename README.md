@@ -15,7 +15,9 @@ The goal of this project is to compare and demonstrate the advantages of using p
 - **build/resnet.ipynb** : Contains the implementation and evaluation of a `PreTrained` and a `Not PreTrained` resnet model. It also contains a small `Gradio` implementation that shows the difference between the two model. We can upload any `Image` we would like to test the two different models with.
 
  
-**How to run it:** ```docker compose up -d```
+**How to run it:** 
+1. Navigate from the Project's root directory to the build directory.
+2. Run this command: ```docker compose up -d```
 
 ## Introduction
 
