@@ -30,14 +30,11 @@ I choose the [CIFAR10 Dataset](https://www.cs.toronto.edu/~kriz/cifar.html) whic
 
 The classes: `plane, car, bird, cat, deer, dog, frog, horse, ship, truck`
 
+Few examples of the dataset:
+
 | ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/b262a315-b6a4-4081-8c8e-007c7ac2d39f)| ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/96775d16-74a5-4ec7-866f-3099ab19b23f) | ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/27d96882-f9da-4631-93c8-da2508537cbe)  | ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/24809a72-e0dc-4c83-a86f-93e53d8b23ea) | ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/4bf5eecb-7a98-4035-b9d8-6aba828dd1b4)
 |----------------------|--------|------------|---------------|-----|
 | Cat|Ship|Plane|Frog|Frog
-
-
-
-
-
 
 ### Interactive UI usage
 
@@ -48,13 +45,14 @@ After we uploaded and sumbitted the image we are able to see the results in the 
 
 ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/ecfcc41e-78e4-47a4-87d2-317d063cda4c)
 
+# Architecture
 
 # Methods of training
 
 The dataset was resized to 224x224, and the images were normalized. Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])the mean and standard deviation values used here. The values [0.485, 0.456, 0.406] represent the mean values for the red, green, and blue channels, respectively. The values [0.229, 0.224, 0.225] represent the standard deviation for the red, green, and blue channels.
 
 The reason for the images to be resized to 224x224 is that the resnet-18 modell was designed to use 224x224 images it's architecture is built like that. 
-The problem with the 32x32 images is that the resnet-18 model downscales the images four times which results in 2x2 size of images at some point. That could be the reasons for the results to be worse with the original 32x32 pictures compared to the 224x224.
+The problem with the 32x32 images is that the resnet-18 model downscales the images atleast four times which results in 2x2 size of images before it reaches the convolutional layers. We can assume that it was not designed to deal with small images without resizing them even if it looks weird.
 
 I used a train-validation split with 90-10 ratio. The test set is completely separate and is not involved in the training/validation split. It is created using the CIFAR-10 test dataset, which is distinct from the training dataset.
 The dataset contains 10 different classes that we can classify using our models.
@@ -67,7 +65,10 @@ The Purple is the PreTrained and the yellow is the Not PreTrained.
 ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/71cf492f-57fc-4bbc-9470-b7fb43b6bd98)
 ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/2f9e55b2-47fc-44f2-bf7f-5cddead194dd)
 
+Trainging on the 32x32 images without upscaling.
 
+![image](https://github.com/Matyiko/ImageClassification/assets/73035410/36d51352-19e0-4271-a3eb-ed518269ea15)
+![image](https://github.com/Matyiko/ImageClassification/assets/73035410/1b620b0f-b94e-4f97-a5df-679e04aec927)
 
 I trained on my own PC with a RTX 3070 GPU.
 The training takes about 5-15 minits for each model so the whole training is about 20 minits.
