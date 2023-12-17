@@ -21,7 +21,7 @@ The goal of this project is to compare and demonstrate the advantages of using p
 
 ## Introduction
 
-For the task i choosed the [Resnet-18](https://pytorch.org/hub/pytorch_vision_resnet/) model because my task is to test the difference between a pretraiend and not pretrained model. The Resnet-18 model is perfect for that porpuse because you can load a pretrained version of the network trained on more than a million images from the ImageNet database or just use the not pretrained version and train it myself.
+For the task i choosed the [Resnet-18](https://pytorch.org/hub/pytorch_vision_resnet/) model because my task is to test the difference between a pretraiend and not pretrained model. The Resnet-18 model is perfect for that purpose because you can load a pretrained version of the network trained on more than a million images from the ImageNet database or just use the not pretrained version and train it myself.
 
 The ResNet-18 is a convolutional neural network that is 18 layers deep. It has around 11 million trainable parameters. It consists of CONV layers with filters of size 3x3
 
@@ -46,6 +46,8 @@ After we uploaded and sumbitted the image we are able to see the results in the 
 ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/ecfcc41e-78e4-47a4-87d2-317d063cda4c)
 
 # Architecture
+
+![image](https://github.com/Matyiko/ImageClassification/assets/73035410/979b7672-8376-4348-a0c3-f346e25348cd)
 
 # Methods of training
 
