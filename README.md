@@ -25,6 +25,7 @@ For the task i choosed the [Resnet-18](https://pytorch.org/hub/pytorch_vision_re
 
 ## Dataset
 I choose the [CIFAR10 Dataset](https://www.cs.toronto.edu/~kriz/cifar.html) which  consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images.
+The classes are completely mutually exclusive.
 
 The classes: `plane, car, bird, cat, deer, dog, frog, horse, ship, truck`
 
