@@ -26,7 +26,7 @@ For the task i choosed the [Resnet-18](https://pytorch.org/hub/pytorch_vision_re
 The ResNet-18 is a convolutional neural network that is 18 layers deep. It has around 11 million trainable parameters. It consists of CONV layers with filters of size 3x3
 
 ## Dataset
-I choose the [CIFAR10 Dataset](https://www.cs.toronto.edu/~kriz/cifar.html) which contains around 50000 labeled images for 10 different classes.
+I choose the [CIFAR10 Dataset](https://www.cs.toronto.edu/~kriz/cifar.html) which  consists of 60000 32x32 colour images in 10 classes, with 6000 images per class. There are 50000 training images and 10000 test images.
 
 The classes: `plane, car, bird, cat, deer, dog, frog, horse, ship, truck`
 
@@ -44,8 +44,11 @@ After we uploaded and sumbitted the image we are able to see the results in the 
 
 The dataset was resized to 224x224, and the images were normalized. Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])the mean and standard deviation values used here. The values [0.485, 0.456, 0.406] represent the mean values for the red, green, and blue channels, respectively. The values [0.229, 0.224, 0.225] represent the standard deviation for the red, green, and blue channels.
 
+The reason for the images to be resized to 224x224 is that the resnet-18 modell was designed to use 224x224 images it's architecture is built like that. 
+The problem with the 32x32 images is that the resnet-18 model downscales the images four times which results in 2x2 size of images at some point. That could be the reasons for the results to be worse with the original 32x32 pictures compared to the 224x224.
+
 I used a train-validation split with 90-10 ratio. The test set is completely separate and is not involved in the training/validation split. It is created using the CIFAR-10 test dataset, which is distinct from the training dataset.
-The dataeset contains 10 different classes that we can classify using our models.
+The dataset contains 10 different classes that we can classify using our models.
 
 There is a visual representation of the Training of the two models.
 The Purple is the PreTrained and the yellow is the Not PreTrained.
@@ -62,10 +65,19 @@ The training takes about 5-15 minits for each model so the whole training is abo
 
 ## Results
 
+Results with the upscaling of the images to 224x224:
+
 | Model                | Epochs | Test Loss  | Test Accuracy |
 |----------------------|--------|------------|---------------|
 | PreTrained           | 10     | 0.2228     | 0.9369        |
 | Not PreTrained       | 10     | 0.2316     | 0.9405        | 
+
+Results with the origimal 32x32 images:
+
+| Model                | Epochs | Test Loss  | Test Accuracy |
+|----------------------|--------|------------|---------------|
+| PreTrained           | 10     | 0.7594     | 0.7978        |
+| Not PreTrained       | 10     | 0.8406     | 0.7980        | 
 
 It's pretty surprising but the `Not PreTrained` model is basicly as good as the `PreTrained` version of it.
 On basic pictures from the internet both of the models give the same results and they are very accurate however i tested the models with selfmade pictures and there i could find very different guesses from the models which is pretty intresting.
@@ -84,4 +96,5 @@ The final conlusions is that in numbers there is almost no difference between th
 
 I most enjoyed the project is visualizing the results with Gradio it was pretty intresting.  However i would have preffered to do it with an actual team so we can try out more intresting and cool stuff together.
 
-
+## Related works
+[Learning Multiple Layers of Features from Tiny Images](https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf), Alex Krizhevsky, 2009
