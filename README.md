@@ -45,7 +45,23 @@ After we uploaded and sumbitted the image we are able to see the results in the 
 ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/ecfcc41e-78e4-47a4-87d2-317d063cda4c)
 
 # Architecture
-The ResNet-18 is a convolutional neural network that is 18 layers deep. It has around 11 million trainable parameters. It consists of CONV layers with filters of size 3x3
+The ResNet is a fully convolutional neural network, which ends in a fully connected layer to produce classification probabilities.
+It  uses convolutional layers with strides of 2 to reduce the size of the feature maps, internally it reduces the image size from 224x224 to 7x7.
+It uses batch normalization and ReLU activation functions.
+
+It is a type of architecture that uses the same convolutional layers as a standard neural network,
+but can be trained to be much deeper than previous attempts.
+The ResNet's "secret ingredient" is the residual block.
+We can imagine a neural network as a function,
+that iteratively transforms the input into the output.
+In each iteration we take the output of the previous layer,
+and apply a transformation to it,
+but in many cases we should only apply a small transformation to the output of the previous layer,
+and the rest of the transformation should be the identity function.
+In ResNets, skip connections are implemented just as described above:
+the output of the previous layer is ADDED to the output of the current layer,
+instead of concatenating them together.
+That is why this is called residual connection, as residual means 'left over'.
 
 ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/979b7672-8376-4348-a0c3-f346e25348cd)
 
