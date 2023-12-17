@@ -30,6 +30,15 @@ I choose the [CIFAR10 Dataset](https://www.cs.toronto.edu/~kriz/cifar.html) whic
 
 The classes: `plane, car, bird, cat, deer, dog, frog, horse, ship, truck`
 
+| ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/b262a315-b6a4-4081-8c8e-007c7ac2d39f)| ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/96775d16-74a5-4ec7-866f-3099ab19b23f) | ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/27d96882-f9da-4631-93c8-da2508537cbe)  | ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/24809a72-e0dc-4c83-a86f-93e53d8b23ea) | ![image](https://github.com/Matyiko/ImageClassification/assets/73035410/4bf5eecb-7a98-4035-b9d8-6aba828dd1b4)
+|----------------------|--------|------------|---------------|-----|
+| Cat|Ship|Plane|Frog|Frog
+
+
+
+
+
+
 ### Interactive UI usage
 
 I implemented an interactive UI with [Gradio](https://www.gradio.app/docs/interface) that allow us to upload any `Image` we would like and we can test the models with it. There are two `input` and `output` sections first one for the pretrained and the second one is for the not pretrained. 
@@ -98,3 +107,5 @@ I most enjoyed the project is visualizing the results with Gradio it was pretty 
 
 ## Related works
 [Learning Multiple Layers of Features from Tiny Images](https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf), Alex Krizhevsky, 2009
+
+[Resnet Documentation](https://arxiv.org/abs/1512.03385)
