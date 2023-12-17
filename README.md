@@ -53,7 +53,7 @@ The ResNet-18 is a convolutional neural network that is 18 layers deep. It has a
 
 The dataset was resized to 224x224, and the images were normalized. Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])the mean and standard deviation values used here. The values [0.485, 0.456, 0.406] represent the mean values for the red, green, and blue channels, respectively. The values [0.229, 0.224, 0.225] represent the standard deviation for the red, green, and blue channels.
 
-The reason for the images to be resized to 224x224 is that the resnet-18 modell was designed to use 224x224 images it's architecture is built like that. 
+The reason for the images to be resized to 224x224 is that the resnet-18 model was designed to use 224x224 images it's architecture is built like that. 
 The problem with the 32x32 images is that the resnet-18 model downscales the images atleast four times which results in 2x2 size of images before it reaches the convolutional layers. We can assume that it was not designed to deal with small images without resizing them even if it looks weird.
 
 I used a train-validation split with 90-10 ratio. The test set is completely separate and is not involved in the training/validation split. It is created using the CIFAR-10 test dataset, which is distinct from the training dataset.
